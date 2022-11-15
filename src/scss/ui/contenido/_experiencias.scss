@@ -1,0 +1,47 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.experiencias{
+    margin-top: 2rem;
+   
+    &__texto{
+        margin-bottom: 1rem;
+    }
+
+    &__grid{
+        @include mix.tablet {
+            display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        }
+    }
+}
+
+.experiencia{
+    margin-bottom: 4rem;
+    &:last-child{
+        margin-bottom: 0;
+    }
+
+    &__heading{
+        margin: 1rem 0;
+    }
+
+}
+
+.viaje{
+    margin: 2rem 0;
+
+    &__texto{
+        font-size: 1.8rem;
+        color: rgb(93, 93, 93);
+    }
+
+    &__btn{
+        @include mix.boton(var.$negro, var.$blanco);
+        border-radius: 1rem;
+        padding: 2rem;
+        margin: 2rem 0;
+        display: inline-block;
+    }
+}

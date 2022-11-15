@@ -1,0 +1,64 @@
+@use "base/variables" as var;
+@use "base/mixins" as mix;
+
+.lugares {
+  // border-radius: 1rem;
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 30rem);
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    gap: 4rem;
+
+    @include mix.tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      overflow: hidden;
+    }
+    @include mix.desktop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+  }
+  &__heading {
+    margin-bottom: 2rem;
+  }
+}
+
+.lugar {
+  scroll-snap-align: center;
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    span {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__nombre {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
+  &__icon {
+    width: 1.5rem;
+  }
+  &__imagen {
+    border-radius: 1rem;
+  }
+
+  &__precio {
+    padding: 0 1rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    span {
+      font-weight: 400;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.proteccion{
+
+    &__heading{
+        margin: 1rem 0;
+        font-size: 2.5rem;
+    }
+    
+    &__grid{
+        padding: 4rem 0;
+        border-top: 1px solid #e1e1e1;
+        border-bottom: 1px solid #e1e1e1;
+        @include mix.tablet {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+        }
+    }
+}
+
+.proteje{
+    margin-bottom: 4rem;
+    &:last-child{
+        margin-bottom: 0;
+    }
+    @include mix.tablet {
+        margin-bottom: 0;
+    }
+    &__img{
+        width: 4rem;
+    }
+
+    &__heading{
+        font-size: 2rem;
+        margin: 1.5rem 0;
+    }
+
+    &__info{
+        font-size: 1.6rem;
+    }
+}

@@ -1,0 +1,27 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.header{
+    background-image: url("../img/header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 3rem 0 20rem 0;
+
+    &__busqueda{
+        margin-top: 5rem;
+        text-align: center;
+        @include mix.tablet {
+            margin-top: 25rem;
+        }
+    }
+    &__busqueda-boton{
+        background-color: var.$blanco;
+        padding: 2rem 4rem;
+        color: var.$primario;
+        margin-top: 2rem;
+        border-radius: 3rem;
+        font-weight: 700;
+        display: inline-block;
+    }
+}

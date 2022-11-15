@@ -1,0 +1,58 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.formulario{
+    margin: 5rem auto 2rem auto;
+    background-color: var.$blanco;
+    border-radius: 5rem;
+    box-shadow: 0px 3px 7px 0px var.$gris;
+    padding: 3rem 0;
+    @include mix.desktop {
+        display: flex;
+        justify-content: space-between;
+        max-width: 90rem;
+        align-items: center;
+        padding: 0;
+    }
+
+    &__campo{
+        padding: 1rem 2rem;
+        display: flex;
+        flex-direction: column;
+        &:hover{
+            border: 1px solid #e1e1e1;
+            background-color: #f0f0f0;
+            border-radius: 5rem;
+            box-shadow: 0px 6px 20px rgb(0 0 0/ 40%);
+        }
+        @include mix.desktop {
+            &:nth-child(1){
+                padding-left: 4rem;
+            }
+        }
+    }
+
+    &__label{
+        font-size: 1.2rem;
+        font-weight: 900;
+    }
+
+    &__input{
+        border: none;
+        // width: 100%;
+        color: var.$gris;
+    }
+
+    &__submit{
+        display: block;
+        height: 4rem;
+        border: none;
+        border-radius: 2rem;
+        background-color: var.$primario;
+        color: var.$blanco;
+        padding: 0 4rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+    }
+}

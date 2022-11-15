@@ -1,0 +1,53 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.anfitrion{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    // row-gap: 4rem;
+    padding: 5rem;
+    background-image: linear-gradient(to bottom, var.$negro 0%, var.$negro 50%, transparent 50%), url(../img/anfitrion.jpg);
+    background-position: center, center bottom;
+    background-size: 100%, 60rem;
+    background-repeat: no-repeat;
+    color: var.$blanco;
+
+    @include mix.telefono {
+        row-gap: 5rem;
+        box-sizing: 100%, 70rem;
+        background-position: center, center 200%;
+    }
+
+    @include mix.tablet {
+        grid-template-rows: unset;
+        background-image: linear-gradient(to right, var.$negro 0%, var.$negro 45%, transparent 55%), url(../img/anfitrion.jpg);
+        background-size: 100%, auto;
+        background-position: center, 50% 30%;
+        padding: 20rem 5rem;
+    }
+
+    @include mix.desktop {
+        background-position: center, right center;
+    }
+    &__contenido{
+        @include mix.tablet {
+            max-width: 50%;
+        }
+    }
+
+    &__heading{
+        margin-bottom: 2rem;
+    }
+
+    &__texto{
+        color: var.$blanco;
+        font-size: 1.6rem;
+    }
+
+    &__enlace{
+        @include mix.boton(var.$blanco, var.$negro);
+        border-radius: 0;
+        padding: 1rem;
+        margin: 2rem 0;
+    }
+}
